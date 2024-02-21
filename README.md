@@ -1,0 +1,1 @@
+This project showcases a basic notes app built using React and typescript.
