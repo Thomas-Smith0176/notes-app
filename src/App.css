@@ -1,7 +1,31 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.header {
+  border: 1px solid black;
+}
+
+.notes-list {
+  border: 1px solid black;
+}
+
+.note {
+  border: 1px solid black;
+}
+
+.note-adder {
+  padding-left: 40%;
+  padding-right: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
