@@ -1,16 +1,14 @@
-type NoteAdderProps = {
-    setNotes: any;
-    notes: number[];
-}
+// type NoteAdderProps = {
+//     setNotes: React.Dispatch<React.SetStateAction<number[]>>;
+//     notes: number[];
+// }
 
-const NoteAdder: React.FunctionComponent<NoteAdderProps> = ({setNotes, notes}) => {
+// : React.FunctionComponent<NoteAdderProps>
+
+const NoteAdder = ({setNotes, notes} : { setNotes : React.Dispatch<React.SetStateAction<number[]>>; notes : number[]}) => {
 
     const handleClick = () => {
-        setNotes((currNotes: any) => {
-            currNotes.push(currNotes.length)
-            return currNotes
-        })
-        console.log(notes)
+        setNotes([...notes, (notes.length + 1)])
     }
 
     return (
