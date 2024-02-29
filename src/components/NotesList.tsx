@@ -3,7 +3,8 @@ import Note from "./Note";
 import NoteAdder from "./NoteAdder";
 
 function NotesList() {
-    const [notes, setNotes] = useState([1, 2, 3])
+    var emptyArray : string[] = []
+    const [notes, setNotes] = useState(emptyArray)
 
     console.log(notes)
 

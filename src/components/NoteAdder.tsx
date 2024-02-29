@@ -5,10 +5,10 @@
 
 // : React.FunctionComponent<NoteAdderProps>
 
-const NoteAdder = ({setNotes, notes} : { setNotes : React.Dispatch<React.SetStateAction<number[]>>; notes : number[]}) => {
+const NoteAdder = ({setNotes, notes} : { setNotes : React.Dispatch<React.SetStateAction<string[]>>; notes : string[]}) => {
 
     const handleClick = () => {
-        setNotes([...notes, (notes.length + 1)])
+        setNotes([...notes, 'new note'])
     }
 
     return (
