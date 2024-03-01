@@ -12,9 +12,9 @@ function NotesList() {
         <section className="notes-list">
         <NoteAdder setNotes={setNotes} notes={notes}/>
         <ul>
-        {notes.map(() => {
+        {notes.map((note) => {
             return <li>
-                <Note/>
+                <Note note={note}/>
             </li>
         })}
         </ul>

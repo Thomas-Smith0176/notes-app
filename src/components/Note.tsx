@@ -1,7 +1,7 @@
-function Note() {
+function Note({note} : {note: string}) {
     return (
         <div className="note">
-        <h3>Note</h3>
+        <h3>{note}</h3>
         </div>
     )
 };
