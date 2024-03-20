@@ -1,13 +1,16 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
-import NotesList from './components/NotesList'
+import Home from './components/Home'
+import NotePage from './components/NotePage'
 
 function App() {
 
   return (
     <main>
-      <Header/>
-      <NotesList/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="notes/:noteId" element={<NotePage />} />
+      </Routes>
     </main>
   )
 }
