@@ -1,11 +1,8 @@
 import { useParams } from "react-router-dom";
 
-interface Params {
-    noteId: string
-}
 
 function NotePage() {
-    const {noteId} = useParams<Params>();
+    const {noteId} = useParams();
     console.log(noteId)
     return (
         <h1>{noteId}</h1>
