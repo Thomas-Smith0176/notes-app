@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
-
-function NotePage() {
+function NotePage({...props}) {
+    console.log(props)
     const {noteId} = useParams();
     console.log(noteId)
     return (

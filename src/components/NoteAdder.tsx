@@ -1,26 +1,37 @@
 import { useState } from "react";
 
 
-const NoteAdder = ({setNotes, notes} : { setNotes : React.Dispatch<React.SetStateAction<string[]>>; notes : string[]}) => {
+const NoteAdder = ({setNotes, notes} : { setNotes : React.Dispatch<React.SetStateAction<{title: string, body: string}[]>>; notes : {title: string, body: string}[]}) => {
 
-    const [input, setInput] = useState('');
+    const [titleInput, setTitleInput] = useState('');
+    const [bodyInput, setBodyInput] = useState('');
 
     const handleClick = () => {
-        setNotes([...notes, input]);
-        setInput('');
+        const newNote = {
+            title: titleInput,
+            body: bodyInput
+        }
+        setNotes([...notes, newNote]);
+        setTitleInput('');
+        setBodyInput('');
     };
 
-    const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setInput(event.currentTarget.value);
+    const handleTitleChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setTitleInput(event.currentTarget.value);
     };
 
-    console.log(input)
+    const handleBodyChange = (event: React.FormEvent<HTMLInputElement>) => {
+        setBodyInput(event.currentTarget.value);
+    };
 
     return (
         <div>
             <form>
                 <label>
-                    <input type="text" value={input} onChange={handleChange}/>
+                    <input type="text" value={titleInput} onChange={handleTitleChange} placeholder="Title..."/>
+                </label>
+                <label>
+                    <input type="text" value={bodyInput} onChange={handleBodyChange} placeholder="Start noting..."/>
                 </label>
             </form>
             <button className="note-adder" onClick={handleClick}>Add note</button>

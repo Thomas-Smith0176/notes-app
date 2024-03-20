@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Note from "./Note";
+import NoteCard from "./Note";
 import NoteAdder from "./NoteAdder";
 
 function NotesList() {
-    var emptyArray : string[] = []
+    var emptyArray : {title: string, body: string}[] = []
     const [notes, setNotes] = useState(emptyArray)
 
     console.log(notes)
@@ -14,7 +14,7 @@ function NotesList() {
         <ul>
         {notes.map((note) => {
             return <li>
-                <Note note={note}/>
+                <NoteCard note={note}/>
             </li>
         })}
         </ul>
