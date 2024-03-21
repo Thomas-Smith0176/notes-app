@@ -1,7 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
-function NotePage({...props}) {
-    console.log(props)
+function NotePage() {
+
+    const {state} = useLocation();
+    const {title, body} = state;
+    console.log(title)
+    console.log(body)
     const {noteId} = useParams();
     console.log(noteId)
     return (
