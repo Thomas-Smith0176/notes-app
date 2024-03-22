@@ -1,4 +1,4 @@
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 function NotePage() {
 
@@ -8,8 +8,19 @@ function NotePage() {
     console.log(body)
     const {noteId} = useParams();
     console.log(noteId)
+
+    const navigate = useNavigate();
+
+    function handleClick() {
+        navigate('/')
+    }
+
     return (
-        <h1>{noteId}</h1>
+        <section>
+            <button onClick={handleClick}>Back to notes</button>
+            <h1>{title}</h1>
+            <h2>{body}</h2>
+        </section>
     )
 }
 
